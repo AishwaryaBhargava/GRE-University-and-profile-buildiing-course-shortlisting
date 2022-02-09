@@ -1,0 +1,311 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Coursera" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:bem="clr-namespace:BalaReva.EasyExcel.Main;assembly=BalaReva.EasyExcel" xmlns:bes="clr-namespace:BalaReva.EasyExcel.Sheets;assembly=BalaReva.EasyExcel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_varCourseName" Type="InArgument(x:String)" />
+    <x:Property Name="in_varFullName" Type="InArgument(x:String)" />
+    <x:Property Name="in_varUserEMailId" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>847.333333333333,1422</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Coursera_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="46">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>BalaReva.EasyExcel.Main</x:String>
+      <x:String>BalaReva.EasyExcel.Utilities</x:String>
+      <x:String>Microsoft.Office.Interop.Excel</x:String>
+      <x:String>BalaReva.EasyExcel.Base</x:String>
+      <x:String>BalaReva.EasyExcel.Sheets</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Callout.Activity</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel.Utilities</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Coursera" sap:VirtualizedContainerService.HintSize="564.666666666667,1357.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="varAssetCourseraWebsite" />
+      <Variable x:TypeArguments="ui:BusinessRuleException" Name="varBusinessException" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="varExtractedDataTable" />
+      <Variable x:TypeArguments="x:String" Name="varAssetGmailCredentialsUsername" />
+      <Variable x:TypeArguments="ss:SecureString" Name="varAssetGmailCredentialsPassword" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="522.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="ui:BusinessRuleException">[varBusinessException]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="varAssetCourseraWebsite" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="522.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[varAssetCourseraWebsite]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.666666666667,982.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open coursera website" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="848,1522.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="806,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'IMG'" sap:VirtualizedContainerService.HintSize="806,594.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Timeout="30" Version="V1">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type course name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Text="[in_varCourseName]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.coursera.org/" DesignTimeRectangle="400, 184, 255, 60" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='react-autosuggest__input' aaname='' /&gt;" Guid="87cea47c-a52f-4a7f-83a5-04f3630c656f" ImageBase64="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" InformativeScreenshot="7c6cec264ef63bbed0ec277f0a777ed0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coursera | Online Courses &amp;amp; Credentials From Top Educators. Join for Free' /&gt;" SearchSteps="FuzzySelector, Image" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+                      <Delay DisplayName=" Delay 5 seconds" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[varExtractedDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Course Name'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Course URL'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Course Type'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,158.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
+                        <uix:NExtractData.NextLink>
+                          <uix:TargetAnchorable BrowserURL="https://www.coursera.org/search?query=machine%20learning&amp;" DesignTimeRectangle="1166, 557, 24, 24" ElementType="Icon" FriendlyName="'SVG cds-11'" FullSelectorArgument="&lt;webctrl id='cds-11' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cds-11' tag='svg' type='' class='css-16qv2i2' aaname='' /&gt;" Guid="6141355b-03b4-426f-9acb-526523cc62f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACrSURBVEhLvc3BDYNADERR6qMKKkoLSROckiZSA4UsmgM5rD5ge+2s9LTS92GmaV7bX2GshLESxkoYO6/P1p7vDW9uGDsa1EsZxQjSRjGeSBnFeGF4FOONoVGMBuFRjEahUYwO7lGMTq5RjAHmUYwBx6B+uv9gdDKPCUYH15hgNHKPCUaD0JhgvBEeE4wXhsYE44nhMcEIUsYEYydtTDB2lsc3Z0wwVsJYZm07PdZ4fSfyfvwAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Top Machine Learning Courses - Learn Machine Learning Online | Coursera' /&gt;" SearchSteps="FuzzySelector, Image" />
+                        </uix:NExtractData.NextLink>
+                        <uix:NExtractData.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="156, 331, 1605, 2655" ElementType="List" FriendlyName="'UL'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul' parentid='main' tag='UL' /&gt;" Guid="616be8e7-d497-4aec-b53a-ddb8a59c4acc" InformativeScreenshot="1d6c107c4f150478aac97418031c4fd0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Top Machine Learning Courses - Learn Machine Learning Online | Coursera' /&gt;" SearchSteps="Selector" />
+                        </uix:NExtractData.Target>
+                      </uix:NExtractData>
+                      <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="sd:DataTable">[varExtractedDataTable]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="sd:DataTable">[varExtractedDataTable.Rows.Cast(Of DataRow)().Where(Function(row) Not row.ItemArray.All(Function(field) field Is DBNull.Value Or field.Equals(""))).CopyToDataTable()]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:WriteRange AddHeaders="True" DataTable="[varExtractedDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Coursera" StartingCell="A1" WorkbookPath="Hackathon Automation - Shortlisted Courses.xlsx" />
+                      <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope" FilePath="C:\Users\Aishwarya Bhargava\OneDrive\Desktop\Hackathon Automation\Hackathon Automation - Shortlisted Courses.xlsx" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
+                        <bem:ExcelScope.Body>
+                          <ActivityAction x:TypeArguments="bem:ExcelParam">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="bem:ExcelParam" Name="WorkBookObj" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="276,243.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <bes:SetBorder BorderColor="{x:Null}" ExecutionResult="{x:Null}" BorderWeight="0" CellRange="A:C" ContinueOnError="False" Delay="3" DisplayName="Set Border" sap:VirtualizedContainerService.HintSize="234,22" sap2010:WorkflowViewState.IdRef="SetBorder_1" LineStyle="xlContinuous" Presets="AllBorder" SheetName="Coursera" />
+                              <bes:FillColor ExecutionResult="{x:Null}" PatternColor="{x:Null}" BackgroundColor="[system.Drawing.Color.Yellow]" CellRange="A1:C1" ContinueOnError="False" Delay="3" DisplayName="Fill Color" sap:VirtualizedContainerService.HintSize="234,86.6666666666667" sap2010:WorkflowViewState.IdRef="FillColor_1" PatternStyle="None" SheetName="Coursera" />
+                            </Sequence>
+                          </ActivityAction>
+                        </bem:ExcelScope.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bem:ExcelScope>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,374.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V1" />
+                      <ui:LogMessage DisplayName="Flipkart website not loaded." sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Coursera website not loaded.&quot;]" />
+                      <Throw DisplayName="Throw - Business Exception" Exception="[new BusinessRuleException(&quot;Coursera website not loaded.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.coursera.org/" DesignTimeRectangle="35, 189, 191, 48" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='rc-CourseraLogo _1j095b7' aaname='Coursera' /&gt;" Guid="aef45bde-5ae0-400e-b2d2-43a5b63fa01e" ImageBase64="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" InformativeScreenshot="1456831ef6eb643e41a6b5fd9c17fa35.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coursera | Online Courses &amp;amp; Credentials From Top Educators. Join for Free' /&gt;" SearchSteps="FuzzySelector" />
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMUSURBVFhHxVdNaBNBFF5/LupBvehFBCt6UE969SLiRRQRSVOLKD2oVPTSXASpWBWKYsGLClYiehCpijcPgiho8eBKbZKapM1PsbFNbBojxm3+n+/NTshudnazSVPywUeWzJvvzc7M+1nJNhzh9ZJjoltyeh9JnR5ZcniT+FtkVJ9lNubwdDPblsH5bSeKu5EKEmySbN1sbtM4Kq+VnJ4hFMprhBtlHndkiGk1hBNjO3CiTyDYHEmLNG3BOb5X6hyfFwotiahJ2pagVS6L8wpR23Qn6JxsbPu2iwG4OhKHj/4MJP8WoVQGUHIlCPzMwuMPKThyKworu8RzGcmH8E7QZRFN4NzYMwHD7xagSB7rwB/LwqGbEaEOI/nSQQ0109u+2xWE6V85Lm8PZVznjVcJoR4yrw9RNc5FhrD9UgASfwpctnEMvjZdhFt1TlnLJMmsPumFrxGFSxkRTxdgNJgB749F06PJZEvs3gj0FTVjUuo0DjL2Dse4jB7k8OD1CKzQ2G4++x3uvplnl5JAR/Ds02/Y0uvXaepIqZ3ndqHB5GxWVdNgNJCBdad9QnvimXszIIcV2N8fEo7rSL7xQTYMIPe4JrnLKhYx3LZesHgjTu3O1KGMR8AqmWGw5/4Md1sFbanItmmSb3ygkmoYvPJ8jrutou/JrMFuiSxaLCDO3VbherocC2jgCEY+pw12SyI/AtuXMFcos8QkstdyE4ak6H8B8RJahGEQC0wtKDFtwLogsieeexhj0TLwMgFrTpmHKyMLQ4tEdB7FRJiay8Kx21FYpal6FJ4P3iZZAqogivXj+J1pnaaO5NsyFXd54UvIPBWn/xVhLKpAKJ7TOdaCMuO+y1MGbSRPxQSLYtSBeTyBOb9Z9GM0iXSRvBgR6pTjXX1Btp2NgN6cQlmkh6wpx4QWNiQ+LFYHBsJCHUZDQ0Kw2ZJ1YBheexFnRSmFLRmdPbVkfowY9/sUHB7Elswpnsto2pIR2tqUVtDWtrwCWqWN47BN0qr75rVQ70SbPs20UEO0DR+ntaCsRalTrR0t+jyXpP96A1+coXLC9gAAAABJRU5ErkJggg==" InformativeScreenshot="3aa238b20f1683fc466827f71a9132a0.png" Selector="&lt;html app='chrome.exe' title='Coursera | Online Courses &amp;amp; Credentials From Top Educators. Join for Free'/&gt;" Url="[varAssetCourseraWebsite]" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="488.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log error Message for the main sequence" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Unable to load Coursera website.&quot; + exception.Source + exception.Message]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="ui:BusinessRuleException">[varBusinessException]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="ui:BusinessRuleException">[exception]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <If Condition="[not(varBusinessException is Nothing)]" sap:VirtualizedContainerService.HintSize="484,744.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,550" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="varAssetGmailSenderFullName" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="varAssetGmailCredentials" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[varAssetGmailCredentialsPassword]" Username="[varAssetGmailCredentialsUsername]" />
+              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="varAssetGmailSenderFullName" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+                <ui:GetRobotAsset.Value>
+                  <OutArgument x:TypeArguments="x:String">[varAssetGmailSenderFullName]</OutArgument>
+                </ui:GetRobotAsset.Value>
+              </ui:GetRobotAsset>
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;p&gt;Hello &lt;b&gt;&quot; + in_varFullName + &quot;&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;We are facing some technical issue while processing some request kindly wait for sometime and try again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Best of luck for your future endeavours.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thankyou&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;With regards&lt;/p&gt;&lt;p&gt;UiPath Robot&lt;/p&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="[varAssetGmailCredentialsUsername]" EnableSSL="True" From="[varAssetGmailCredentialsUsername]" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="[varAssetGmailSenderFullName]" Port="587" SecureConnection="Auto" SecurePassword="[varAssetGmailCredentialsPassword]" Server="smtp.gmail.com" Subject="Execution Error Mail" To="[in_varUserEMailId]">
+                <ui:SendMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                </ui:SendMail.Files>
+              </ui:SendMail>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

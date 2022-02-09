@@ -1,0 +1,161 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Course_Shortlisting" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_varFullName" Type="InArgument(x:String)" />
+    <x:Property Name="in_varUserEMailId" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>847.333333333333,1558.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Course_Shortlisting_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This sequence will pop-up a form to fill the course name and select the educational websites and then individually visit the selected websites and scrape out the best 10 courses and send mail to the user." DisplayName="Course_Shortlisting" sap:VirtualizedContainerService.HintSize="562.666666666667,1494" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="varJsonFormOutput" />
+      <Variable x:TypeArguments="njl:JObject" Name="varJsonObjectOutput" />
+      <Variable x:TypeArguments="x:String" Name="varAssetGmailCredentialsUsername" />
+      <Variable x:TypeArguments="ss:SecureString" Name="varAssetGmailCredentialsPassword" />
+      <Variable x:TypeArguments="x:String" Name="varAssetGmailSenderFullName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="016c507b-af74-466c-8adf-63d034519463" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" DisplayName="Create Form" FormFieldsOutputData="[varJsonFormOutput]" FormHeight="400" FormSchema="%[{&quot;label&quot;:&quot;Choose course websites from the following:&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:{&quot;varUdacity&quot;:false,&quot;varUdemy&quot;:false,&quot;varCoursera&quot;:false,&quot;varLinkedInLearning&quot;:false,&quot;Udacity&quot;:false,&quot;Udemy&quot;:false,&quot;Coursera&quot;:false,&quot;LinkedIn Learning&quot;:false},&quot;values&quot;:[{&quot;label&quot;:&quot;Udacity&quot;,&quot;value&quot;:&quot;Udacity&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Udemy&quot;,&quot;value&quot;:&quot;Udemy&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Coursera&quot;,&quot;value&quot;:&quot;Coursera&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;varChooseCourseWebsitesFromTheFollowing&quot;,&quot;type&quot;:&quot;selectboxes&quot;,&quot;input&quot;:true,&quot;inputType&quot;:&quot;checkbox&quot;},{&quot;label&quot;:&quot;Course Name:&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;varCourseName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;tableView&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100150&quot;,&quot;Name&quot;:&quot;Cyborg&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/cyborg.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/cyborg.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="520.666666666667,142.666666666667" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" StartAsMinimized="False">
+      <ufa:FormActivity.Body>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+      </ufa:FormActivity.Body>
+      <ufa:FormActivity.DelayBody>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </ActivityAction>
+      </ufa:FormActivity.DelayBody>
+      <ufa:FormActivity.FormFieldsCollection>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ufa:FormActivity.FormFieldsCollection>
+    </ufa:FormActivity>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="520.666666666667,62" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[varJsonObjectOutput]" JsonString="[varJsonFormOutput]" />
+    <ui:ForEach x:TypeArguments="njl:JProperty" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="520.666666666667,436.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[varJsonObjectOutput(&quot;varChooseCourseWebsitesFromTheFollowing&quot;)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="njl:JProperty">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="njl:JProperty" Name="varCourseWebsite" />
+          </ActivityAction.Argument>
+          <If Condition="[varCourseWebsite.Value.ToString.Equals(&quot;True&quot;)]" sap:VirtualizedContainerService.HintSize="484,308.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[varCourseWebsite.Name + &quot;.xaml&quot;]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_varCourseName">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="varJsonObjectOutput(&quot;varCourseName&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_varFullName">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_varFullName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_varUserEMailId">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_varUserEMailId" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+          </If>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="varAssetGmailCredentials" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="520.666666666667,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[varAssetGmailCredentialsPassword]" Username="[varAssetGmailCredentialsUsername]" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="varAssetGmailSenderFullName" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="520.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[varAssetGmailSenderFullName]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;p&gt;Hello &lt;b&gt;&quot; + in_varFullName + &quot;&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;We have processed your request for shortlisting top courses of the topic: &quot;+ varJsonObjectOutput(&quot;varCourseName&quot;).ToString +&quot; from the website that you selected via our form. On the basis of your course  name we have shortlisted courses and they are attached in an excel. Kindly go through the excel and make a positive decision towards your bright future.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Best of luck for your future endeavours.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thankyou&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;With regards&lt;/p&gt;&lt;p&gt;UiPath Robot&lt;/p&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="[varAssetGmailCredentialsUsername]" EnableSSL="True" From="[varAssetGmailCredentialsUsername]" sap:VirtualizedContainerService.HintSize="520.666666666667,156.666666666667" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="[varAssetGmailSenderFullName]" Port="587" SecureConnection="Auto" SecurePassword="[varAssetGmailCredentialsPassword]" Server="smtp.gmail.com" Subject="[&quot;Hackathon Automation: Shortlisted Courses for &quot; + in_varFullName]" To="[in_varUserEMailId]">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">C:\Users\Aishwarya Bhargava\OneDrive\Desktop\Hackathon Automation\Hackathon Automation - Shortlisted Courses.xlsx</InArgument>
+        </scg:List>
+      </ui:SendMail.Files>
+    </ui:SendMail>
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="520.666666666667,80.6666666666667" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="Hackathon Automation - Shortlisted Courses.xlsx" />
+  </Sequence>
+</Activity>
