@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>847.333333333333,1422</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>847.333333333333,737.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Coursera_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -103,7 +103,12 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Coursera" sap:VirtualizedContainerService.HintSize="564.666666666667,1357.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Coursera" sap:VirtualizedContainerService.HintSize="480.666666666667,672.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="varAssetCourseraWebsite" />
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="varBusinessException" />
@@ -116,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="522.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="438.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:BusinessRuleException">[varBusinessException]</OutArgument>
       </Assign.To>
@@ -124,43 +129,43 @@
         <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="varAssetCourseraWebsite" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="522.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="varAssetCourseraWebsite" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="438.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[varAssetCourseraWebsite]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.666666666667,982.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.666666666667,298" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open coursera website" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open coursera website" sap:VirtualizedContainerService.HintSize="756,969.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="848,1522.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,751.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="806,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-                <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'IMG'" sap:VirtualizedContainerService.HintSize="806,594.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Timeout="30" Version="V1">
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="680,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'IMG'" sap:VirtualizedContainerService.HintSize="680,594.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Timeout="30" Version="V1">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="818.666666666667,1480" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type course name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Text="[in_varCourseName]" Version="V1">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type course name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="776.666666666667,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Text="[in_varCourseName]" Version="V1">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.coursera.org/" DesignTimeRectangle="400, 184, 255, 60" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='react-autosuggest__input' aaname='' /&gt;" Guid="87cea47c-a52f-4a7f-83a5-04f3630c656f" ImageBase64="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" InformativeScreenshot="7c6cec264ef63bbed0ec277f0a777ed0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coursera | Online Courses &amp;amp; Credentials From Top Educators. Join for Free' /&gt;" SearchSteps="FuzzySelector, Image" />
                         </uix:NTypeInto.Target>
                       </uix:NTypeInto>
-                      <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
-                      <Delay DisplayName=" Delay 5 seconds" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[varExtractedDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Course Name'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Course URL'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Course Type'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,158.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
+                      <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="776.666666666667,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+                      <Delay DisplayName=" Delay 5 seconds" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="776.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[varExtractedDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Course Name'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Course URL'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Course Type'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="776.666666666667,158.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="d9f936f5-a830-4528-bb5b-c4b19ea51b97" Version="V1">
                         <uix:NExtractData.NextLink>
                           <uix:TargetAnchorable BrowserURL="https://www.coursera.org/search?query=machine%20learning&amp;" DesignTimeRectangle="1166, 557, 24, 24" ElementType="Icon" FriendlyName="'SVG cds-11'" FullSelectorArgument="&lt;webctrl id='cds-11' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cds-11' tag='svg' type='' class='css-16qv2i2' aaname='' /&gt;" Guid="6141355b-03b4-426f-9acb-526523cc62f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACrSURBVEhLvc3BDYNADERR6qMKKkoLSROckiZSA4UsmgM5rD5ge+2s9LTS92GmaV7bX2GshLESxkoYO6/P1p7vDW9uGDsa1EsZxQjSRjGeSBnFeGF4FOONoVGMBuFRjEahUYwO7lGMTq5RjAHmUYwBx6B+uv9gdDKPCUYH15hgNHKPCUaD0JhgvBEeE4wXhsYE44nhMcEIUsYEYydtTDB2lsc3Z0wwVsJYZm07PdZ4fSfyfvwAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Top Machine Learning Courses - Learn Machine Learning Online | Coursera' /&gt;" SearchSteps="FuzzySelector, Image" />
                         </uix:NExtractData.NextLink>
@@ -168,7 +173,7 @@
                           <uix:TargetAnchorable DesignTimeRectangle="156, 331, 1605, 2655" ElementType="List" FriendlyName="'UL'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul' parentid='main' tag='UL' /&gt;" Guid="616be8e7-d497-4aec-b53a-ddb8a59c4acc" InformativeScreenshot="1d6c107c4f150478aac97418031c4fd0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Top Machine Learning Courses - Learn Machine Learning Online | Coursera' /&gt;" SearchSteps="Selector" />
                         </uix:NExtractData.Target>
                       </uix:NExtractData>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign sap:VirtualizedContainerService.HintSize="776.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="sd:DataTable">[varExtractedDataTable]</OutArgument>
                         </Assign.To>
@@ -176,21 +181,21 @@
                           <InArgument x:TypeArguments="sd:DataTable">[varExtractedDataTable.Rows.Cast(Of DataRow)().Where(Function(row) Not row.ItemArray.All(Function(field) field Is DBNull.Value Or field.Equals(""))).CopyToDataTable()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:WriteRange AddHeaders="True" DataTable="[varExtractedDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Coursera" StartingCell="A1" WorkbookPath="Hackathon Automation - Shortlisted Courses.xlsx" />
-                      <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope" FilePath="C:\Users\Aishwarya Bhargava\OneDrive\Desktop\Hackathon Automation\Hackathon Automation - Shortlisted Courses.xlsx" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
+                      <ui:WriteRange AddHeaders="True" DataTable="[varExtractedDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="776.666666666667,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Coursera" StartingCell="A1" WorkbookPath="Hackathon Automation - Shortlisted Courses.xlsx" />
+                      <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope" FilePath="D:\Programming and Certifications\UiPath Automations\Hackathon Automation\Hackathon Automation - Shortlisted Courses.xlsx" sap:VirtualizedContainerService.HintSize="776.666666666667,386.666666666667" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
                         <bem:ExcelScope.Body>
                           <ActivityAction x:TypeArguments="bem:ExcelParam">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="bem:ExcelParam" Name="WorkBookObj" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="276,243.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="276,242" sap2010:WorkflowViewState.IdRef="Sequence_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <bes:SetBorder BorderColor="{x:Null}" ExecutionResult="{x:Null}" BorderWeight="0" CellRange="A:C" ContinueOnError="False" Delay="3" DisplayName="Set Border" sap:VirtualizedContainerService.HintSize="234,22" sap2010:WorkflowViewState.IdRef="SetBorder_1" LineStyle="xlContinuous" Presets="AllBorder" SheetName="Coursera" />
-                              <bes:FillColor ExecutionResult="{x:Null}" PatternColor="{x:Null}" BackgroundColor="[system.Drawing.Color.Yellow]" CellRange="A1:C1" ContinueOnError="False" Delay="3" DisplayName="Fill Color" sap:VirtualizedContainerService.HintSize="234,86.6666666666667" sap2010:WorkflowViewState.IdRef="FillColor_1" PatternStyle="None" SheetName="Coursera" />
+                              <bes:FillColor ExecutionResult="{x:Null}" PatternColor="{x:Null}" BackgroundColor="[system.Drawing.Color.Yellow]" CellRange="A1:C1" ContinueOnError="False" Delay="3" DisplayName="Fill Color" sap:VirtualizedContainerService.HintSize="234,88" sap2010:WorkflowViewState.IdRef="FillColor_1" PatternStyle="None" SheetName="Coursera" />
                             </Sequence>
                           </ActivityAction>
                         </bem:ExcelScope.Body>
@@ -234,7 +239,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="488.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
